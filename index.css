@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    background-image: url(./background-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: top;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main{
+    /* border: 2px solid red; */
+    color: hsl(292, 42%, 14%);
+    max-width: 600px;
+    padding: 20px;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 2px 2px 25px hsl(0, 2%, 33%);
+    border-radius: 10px;
+    font-family: "Work Sans", sans-serif;
+}
+
+#main .faqs{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    /* border: 2px solid green; */
+}
+
+#main .faqs .faq-image{
+    margin-right: 20px;
+}
+
+.faq-name h1{
+    font-weight: 700;
+    font-family: "Work Sans", sans-serif;
+}
+
+.accordion{
+    width: 100%;
+    /* border: 2px solid blue; */
+    font-size: 16px;
+}
+
+.accordion .accordion-content{
+    position: relative;
+    /* border: 2px solid pink; */
+    margin: 10px 0px;
+}
+
+.accordion .accordion-content .accordion-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 2px solid green; */
+}
+
+.accordion .accordion-content .label{
+    position: relative;
+    padding: 20px 0px;
+    /* border: 2px solid red; */
+    font-size: 16px;
+    color: hsl(292, 42%, 14%);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.accordion .accordion-content .label:hover{
+    color: hsl(292, 16%, 49%);
+}
+
+.accordion .accordion-content img::before{
+    content: url(./icon-plus.svg);
+}
+
+.accordion .accordion-content.active img::before{
+    content: url(./icon-minus.svg);
+}
+
+.accordion .accordion-content .content{
+    /* border: 2px solid blue; */
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    overflow-y: auto;
+    font-weight: 400;
+    color: hsl(292, 16%, 49%);
+}
+
+.accordion .accordion-content.active .content{
+    height: 70px;
+}
+
+@media (max-width: 480px){
+    #main{
+        /* max-width: 300px; */
+        padding: 10px;
+        margin: 30px;
+    }
+
+    .accordion .accordion-content .accordion-head .label{
+        text-wrap: wrap;
+        max-width: 200px;
+    }
+
+    .accordion .accordion-content .accordion-head{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 680px){
+    #main{
+        width: 500px;
+        margin: 20px;
+    }
+}
+
+@media (min-width: 1440px){
+    body{
+        width: 100%;
+        background-image: url(./background-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: top;
+    }
+}   
